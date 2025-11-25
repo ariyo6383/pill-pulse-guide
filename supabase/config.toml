@@ -1,0 +1,4 @@
+project_id = "oxjtbgylgtawpfmatnie"
+
+[functions.recommend-tablets]
+verify_jwt = false
