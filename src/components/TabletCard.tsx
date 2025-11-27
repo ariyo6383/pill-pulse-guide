@@ -8,6 +8,7 @@ interface TabletCardProps {
   dosage?: string;
   sideEffects?: string;
   category: string;
+  ageLimit?: string;
 }
 
 const categoryColors: Record<string, string> = {
@@ -19,7 +20,7 @@ const categoryColors: Record<string, string> = {
   other: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
 };
 
-export const TabletCard = ({ name, uses, dosage, sideEffects, category }: TabletCardProps) => {
+export const TabletCard = ({ name, uses, dosage, sideEffects, category, ageLimit }: TabletCardProps) => {
   return (
     <Card className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
       <CardHeader>
@@ -52,6 +53,12 @@ export const TabletCard = ({ name, uses, dosage, sideEffects, category }: Tablet
           <div>
             <h4 className="font-semibold text-sm text-muted-foreground mb-1">Side Effects</h4>
             <CardDescription className="text-foreground">{sideEffects}</CardDescription>
+          </div>
+        )}
+        {ageLimit && (
+          <div>
+            <h4 className="font-semibold text-sm text-muted-foreground mb-1">Age Limit</h4>
+            <CardDescription className="text-foreground font-medium">{ageLimit}</CardDescription>
           </div>
         )}
       </CardContent>

@@ -26,12 +26,14 @@ const Admin = () => {
     uses: string;
     dosage: string;
     side_effects: string;
+    age_limit: string;
     category: "painkiller" | "antibiotic" | "vitamin" | "antacid" | "antihistamine" | "other";
   }>({
     name: "",
     uses: "",
     dosage: "",
     side_effects: "",
+    age_limit: "",
     category: "other",
   });
 
@@ -162,6 +164,7 @@ const Admin = () => {
       uses: tablet.uses,
       dosage: tablet.dosage || "",
       side_effects: tablet.side_effects || "",
+      age_limit: tablet.age_limit || "",
       category: tablet.category as "painkiller" | "antibiotic" | "vitamin" | "antacid" | "antihistamine" | "other",
     });
     setIsDialogOpen(true);
@@ -173,6 +176,7 @@ const Admin = () => {
       uses: "",
       dosage: "",
       side_effects: "",
+      age_limit: "",
       category: "other",
     });
     setEditingTablet(null);
@@ -261,6 +265,15 @@ const Admin = () => {
                     value={formData.side_effects}
                     onChange={(e) => setFormData({ ...formData, side_effects: e.target.value })}
                     className="min-h-[100px]"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="age_limit">Age Limit</Label>
+                  <Input
+                    id="age_limit"
+                    placeholder="e.g., Adults only (18+), Children over 6 years"
+                    value={formData.age_limit}
+                    onChange={(e) => setFormData({ ...formData, age_limit: e.target.value })}
                   />
                 </div>
                 <div className="flex gap-2">
