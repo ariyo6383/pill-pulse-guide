@@ -97,6 +97,7 @@ const Index = () => {
                 dosage={tablet.dosage}
                 sideEffects={tablet.side_effects}
                 category={tablet.category}
+                ageLimit={tablet.age_limit}
               />
             ))}
           </div>
