@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       tablets: {
         Row: {
+          age_limit: string | null
           category: Database["public"]["Enums"]["tablet_category"]
           created_at: string
           dosage: string | null
@@ -26,6 +27,7 @@ export type Database = {
           uses: string
         }
         Insert: {
+          age_limit?: string | null
           category?: Database["public"]["Enums"]["tablet_category"]
           created_at?: string
           dosage?: string | null
@@ -36,6 +38,7 @@ export type Database = {
           uses: string
         }
         Update: {
+          age_limit?: string | null
           category?: Database["public"]["Enums"]["tablet_category"]
           created_at?: string
           dosage?: string | null
